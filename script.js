@@ -107,7 +107,7 @@ function imprimirNotaFiscal() {
           <p>• ${new Date().toLocaleString('pt-BR')}</p>
           <p>• R$ ${p.preco.toFixed(2)}</p>
           <hr>
-          <h3>•<br>•------------------------<br>•</h3>
+          <h3>•<br>•<br>•<br>•------------------------<br>•<br>•<br>•</h3>
         </div>
         
       `;

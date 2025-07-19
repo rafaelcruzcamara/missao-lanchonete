@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanchonete Mises - Sistema de Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="text29.png" alt="Lanchonete Mises" class="logo">
+  </header>
+
+   <footer>
+        Desenvolvido por Rafael Cruz Camara • Todos os direitos reservados • 2023
+    </footer>
+
+    <script>
+        // Adicione este efeito de hover dinâmico
+        document.querySelectorAll('.categoria-header').forEach(header => {
+            header.addEventListener('mouseenter', () => {
+                header.style.transform = 'scale(1.02)';
+            });
+            header.addEventListener('mouseleave', () => {
+                header.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+  <main>
+    <!-- Campo do Cliente -->
+    <div class="input-cliente">
+      <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+    </div>
+
+    <!-- Seção de Produtos -->
+    <section>
+      <div class="categoria-header" onclick="toggleCategoria('salgados')">
+        <h2>Salgados</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="salgados"></div>
+
+      <div class="categoria-header" onclick="toggleCategoria('bebidas')">
+        <h2>Bebidas</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="bebidas"></div>
+
+      <div class="categoria-header" onclick="toggleCategoria('doces')">
+        <h2>Doces</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="doces"></div>
+    </section>
+
+    <!-- Seção do Pedido Atual -->
+   <section>
+  <h2>Pedido Atual</h2>
+  <div class="pedido-lista" id="pedido"></div>
+  <div class="pedido-total" id="pedidoTotal">Total: R$ 0,00</div>
+  
+  <div class="controles-pedido">
+    <!-- Botões à esquerda -->
+    <div class="grupo-botoes">
+      <button onclick="imprimirNotaFiscal()" class="primary">Imprimir</button>
+      <button onclick="limparPedido()">Limpar</button>
+    </div>
+    
+    <!-- Campo do cliente à direita - APENAS ESTE DEVE EXISTIR -->
+    <div class="campo-cliente">
+      <input type="text" id="nomeCliente" placeholder="Nome do Cliente" class="input-estilizado">
+    </div>
+  </div>
+</section>
+
+    <!-- Seção do Relatório -->
+    <section>
+      <h2>Relatório do Dia</h2>
+      <div class="relatorio-lista" id="relatorio"></div>
+      <div class="pedido-total" id="relatorioTotal">Total do Dia: R$ 0,00</div>
+      <div class="acoes">
+        <button onclick="imprimirRelatorio()">Imprimir Relatório</button>
+        <button onclick="limparRelatorio()">Limpar Relatório</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>

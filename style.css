@@ -1,0 +1,257 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #c8aa6e;
+  --dark: #1b1b1b;
+  --dark-gray: #2c2c2c;
+  --medium-gray: #3a3a3a;
+  --light-gray: #f2eee3;
+  --text: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--primary);
+  margin-bottom: 0.8rem;
+  
+}
+
+.logo {
+  height: 40px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* ===== MAIN LAYOUT ===== */
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 0.8rem;
+
+}
+
+section {
+  flex: 1 1 280px;
+  background: var(--dark-gray);
+  padding: 0.6rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: none;
+}
+
+/* ===== CLIENT INPUT ===== */
+/* CONTROLES PRINCIPAIS */
+.controles-pedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  background: rgba(43, 43, 43, 0.3);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.grupo-botoes {
+  display: flex;
+  gap: 8px;
+}
+
+/* ESTILO DO CAMPO DO CLIENTE */
+.campo-cliente {
+  flex: 1;
+  max-width: 2000px;
+  margin-left: 10px;
+}
+
+.input-estilizado {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #c8aa6e;
+  border-radius: 4px;
+  background: #2c2c2c;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.input-estilizado:focus {
+  outline: none;
+  border-color: #e2c98a;
+  box-shadow: 0 0 0 2px rgba(200, 170, 110, 0.2);
+}
+
+/* REMOVE QUALQUER INPUT DUPLICADO */
+#nomeCliente:not(.input-estilizado) {
+  display: none !important;
+}
+
+
+
+/* ===== CATEGORIES ===== */
+.categoria-header {
+  background: var(--medium-gray);
+  padding: 0.4rem 0.6rem;
+  margin: 0.3rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoria-header h2 {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.toggle-icon {
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+/* ===== PRODUCTS ===== */
+.produtos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.produto-item {
+  background: var(--medium-gray);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.produto-nome {
+  font-weight: 500;
+  flex: 1;
+}
+
+.produto-preco {
+  color: var(--primary);
+  margin: 0 0.4rem;
+  font-weight: bold;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* ===== BUTTONS & INPUTS ===== */
+button {
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background: #e2c98a;
+}
+
+button.primary {
+  background: var(--primary);
+  color: var(--dark);
+}
+
+input[type="number"] {
+  width: 40px;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: var(--dark-gray);
+  color: var(--text);
+  margin-right: 8px;
+}
+
+/* ===== ORDER SECTION ===== */
+.pedido-lista, .relatorio-lista {
+  background: var(--dark-gray);
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 0.4rem;
+}
+
+.pedido-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed #444;
+}
+
+.pedido-total, #relatorioTotal {
+  text-align: right;
+  margin-top: 0.3rem;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.acoes {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  color: #888;
+  border-top: 1px solid #333;
+  margin-top: auto;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}

@@ -3,7 +3,7 @@ const produtos = [
   { id: 1, nome: "Pastel", preco: 10.00, categoria: "salgado" },
   { id: 2, nome: "Pastelão", preco: 20.00, categoria: "salgado" },
   { id: 3, nome: "Refrigerante Lata", preco: 5.00, categoria: "bebida" },
-  { id: 4, nome: "Suco Natural", preco: 7.00, categoria: "bebida" },
+  { id: 4, nome: "Suco Natural", preco: 5.00, categoria: "bebida" },
   { id: 5, nome: "Água Mineral", preco: 3.00, categoria: "bebida" },
   { id: 6, nome: "Água com gás", preco: 5.00, categoria: "bebida" },
   { id: 7, nome: "Gatorade", preco: 10.00, categoria: "bebida" },

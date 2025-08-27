@@ -1,4 +1,4 @@
-// === DADOS ===
+
 const produtos = [
   { id: 1, nome: "Pastel", preco: 5.00, categoria: "salgado" },
   { id: 2, nome: "Mini pizza", preco: 5.00, categoria: "salgado" },
@@ -385,4 +385,5 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 

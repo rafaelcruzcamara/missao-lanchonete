@@ -92,7 +92,7 @@ function imprimirNotaFiscal() {
     for (let i = 0; i < p.qtd; i++) {
       blocos += `
         <div class="bloco">
-          <h3 style="text-align:center">•<br>@LANCHONETE MISES</h3>
+          <h3 style="text-align:center">•<br>NOSSA SENHORA DO LIVRAMENTO</h3>
           <p>==> Cliente: ${nome}</p>
           <p>==> <strong>${p.nome}</strong></p>
           <p>• ${new Date().toLocaleString('pt-BR')}</p>
@@ -385,5 +385,6 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 

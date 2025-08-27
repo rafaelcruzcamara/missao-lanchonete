@@ -255,3 +255,195 @@ footer {
 ::-webkit-scrollbar-track {
   background: var(--dark-gray);
 }
+
+/* ===== FORMATAÇÃO DE PAGAMENTO ===== */
+.forma-pagamento {
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 0.01rem 0;
+}
+
+.forma-pagamento label {
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.select-estilizado {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: var(--dark-gray);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  width: 160px;
+  height: 38px;
+  font-size: 0.9rem;
+}
+
+/* ===== BOTÃO DE EXCLUIR PEDIDO ===== */
+.btn-excluir {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  margin-left: 0.8rem;
+  border-radius: 4px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== BOTÕES ADICIONAIS DO RELATÓRIO ===== */
+.acoes {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.acoes button {
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ===== CONTROLES DO PEDIDO - ALINHAMENTO PERFEITO ===== */
+.controles-pedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  gap: 1rem;
+  background: rgba(43, 43, 43, 0.3);
+  border-radius: 6px;
+}
+
+.grupo-botoes {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.grupo-botoes button {
+  height: 38px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campo-cliente {
+  flex: 1;
+  max-width: 200px;
+}
+
+.input-estilizado {
+  width: 100%;
+  height: 38px;
+  padding: 0 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: var(--dark-gray);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* ===== ALINHAMENTO DOS PRODUTOS ===== */
+.produto-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.6rem;
+}
+
+.produto-item input[type="number"] {
+  width: 50px;
+  height: 32px;
+  margin: 0;
+}
+
+.produto-item button {
+  height: 32px;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== ALINHAMENTO DOS ITENS DO PEDIDO ===== */
+.pedido-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.4rem 0;
+}
+
+.pedido-item button {
+  height: 28px;
+  min-width: 70px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== UNIFORMIZAÇÃO DE ALTURAS ===== */
+button, .input-estilizado, .select-estilizado {
+  box-sizing: border-box;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+  .acoes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .controles-pedido {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .campo-cliente {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .input-estilizado {
+    width: 100%;
+  }
+  
+  .forma-pagamento {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  
+  .select-estilizado {
+    width: 100%;
+  }
+  
+  .produto-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .produto-item input[type="number"] {
+    width: 60px;
+  }
+  
+  .produto-item button {
+    width: 100%;
+  }
+}

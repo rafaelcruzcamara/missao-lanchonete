@@ -48,18 +48,29 @@
       </div>
       <div class="produtos-lista" id="bebidas"></div>
 
-      <div class="categoria-header" onclick="toggleCategoria('doces')">
-        <h2>Doces</h2>
-        <span class="toggle-icon">▼</span>
-      </div>
+      
+        
+      <!-- excluido a seção de doces-->  
       <div class="produtos-lista" id="doces"></div>
     </section>
 
     <!-- Seção do Pedido Atual -->
-   <section>
+<section>
   <h2>Pedido Atual</h2>
   <div class="pedido-lista" id="pedido"></div>
   <div class="pedido-total" id="pedidoTotal">Total: R$ 0,00</div>
+  
+  
+  <!-- Seleção de forma de pagamento -->
+  <div class="forma-pagamento">
+    <label>Forma de Pagamento:</label>
+    <select id="formaPagamento" class="select-estilizado">
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Cartão de Débito">Débito</option>
+      <option value="Cartão de Crédito">Crédito</option>
+      <option value="PIX">PIX</option>
+    </select>
+  </div>
   
   <div class="controles-pedido">
     <!-- Botões à esquerda -->
@@ -68,7 +79,7 @@
       <button onclick="limparPedido()">Limpar</button>
     </div>
     
-    <!-- Campo do cliente à direita - APENAS ESTE DEVE EXISTIR -->
+    <!-- Campo do cliente à direita -->
     <div class="campo-cliente">
       <input type="text" id="nomeCliente" placeholder="Nome do Cliente" class="input-estilizado">
     </div>
@@ -77,14 +88,16 @@
 
     <!-- Seção do Relatório -->
     <section>
-      <h2>Relatório do Dia</h2>
-      <div class="relatorio-lista" id="relatorio"></div>
-      <div class="pedido-total" id="relatorioTotal">Total do Dia: R$ 0,00</div>
-      <div class="acoes">
-        <button onclick="imprimirRelatorio()">Imprimir Relatório</button>
-        <button onclick="limparRelatorio()">Limpar Relatório</button>
-      </div>
-    </section>
+  <h2>Relatório do Dia</h2>
+  <div class="relatorio-lista" id="relatorio"></div>
+  <div class="pedido-total" id="relatorioTotal">Total do Dia: R$ 0,00</div>
+  <div class="acoes">
+    <button onclick="imprimirRelatorio()">Impr. Relatório Completo</button>
+    <button onclick="imprimirRelatorioResumido()">Impr. Relatório Resumido</button>
+    <button onclick="exportarRelatorioPDF()">Exportar PDF</button>
+    <button onclick="limparRelatorio()">Limpar Relatório</button>
+  </div>
+</section>
   </main>
 
   <!-- Script principal -->

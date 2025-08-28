@@ -4,7 +4,8 @@ const produtos = [
   { id: 2, nome: "Mini pizza", preco: 5.00, categoria: "salgado" },
   { id: 3, nome: "Refrigerante Lata", preco: 2.00, categoria: "bebida" },
   { id: 4, nome: "Espetinho", preco: 5.00, categoria: "salgado" },
-  { id: 5, nome: "Alimentação", preco: 10.00, categoria: "salgado" }
+  { id: 5, nome: "Alimentação", preco: 10.00, categoria: "salgado" },
+  { id: 5, nome: "Salgado", preco: 10.00, categoria: "salgado" }
 ];
 
 let pedido = [];
@@ -385,6 +386,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

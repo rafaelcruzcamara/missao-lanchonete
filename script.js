@@ -1,12 +1,13 @@
 
 const produtos = [
-  { id: 1, nome: "Pastel", preco: 5.00, categoria: "salgado" },
-  { id: 2, nome: "Mini pizza", preco: 5.00, categoria: "salgado" },
-  { id: 3, nome: "Salgado", preco: 5.00, categoria: "salgado" },
-  { id: 4, nome: "Refrigerante", preco: 2.00, categoria: "bebida" },
-  { id: 5, nome: "Espetinho simples", preco: 10.00, categoria: "salgado" },
-  { id: 6, nome: "Espetinho completo", preco: 15.00, categoria: "salgado" },
-  { id: 7, nome: "Alimentação", preco: 10.00, categoria: "salgado" }
+  { id: 1, nome: "Pastel", preco: 10.00, categoria: "salgado" },
+  { id: 2, nome: "Pastelão", preco: 20.00, categoria: "salgado" },
+  { id: 4, nome: "Refrigerante", preco: 5.00, categoria: "bebida" },
+  { id: 4, nome: "Agua", preco: 3.00, categoria: "bebida" },
+  { id: 4, nome: "Agua com gás", preco: 5.00, categoria: "bebida" },
+  { id: 4, nome: "gatorade", preco: 10.00, categoria: "bebida" },
+  { id: 4, nome: "Suco", preco: 5.00, categoria: "bebida" },
+
 ];
 
 let pedido = [];
@@ -387,6 +388,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

@@ -2,11 +2,19 @@
 const produtos = [
   { id: 1, nome: "Pastel", preco: 10.00, categoria: "salgado" },
   { id: 2, nome: "Pastelão", preco: 20.00, categoria: "salgado" },
-  { id: 4, nome: "Refrigerante", preco: 5.00, categoria: "bebida" },
-  { id: 4, nome: "Agua", preco: 3.00, categoria: "bebida" },
-  { id: 4, nome: "Agua com gás", preco: 5.00, categoria: "bebida" },
-  { id: 4, nome: "gatorade", preco: 10.00, categoria: "bebida" },
-  { id: 4, nome: "Suco", preco: 5.00, categoria: "bebida" },
+  { id: 3, nome: "Refrigerante Lata", preco: 5.00, categoria: "bebida" },
+  { id: 4, nome: "Suco Natural", preco: 5.00, categoria: "bebida" },
+  { id: 5, nome: "Água Mineral", preco: 3.00, categoria: "bebida" },
+  { id: 6, nome: "Água com gás", preco: 5.00, categoria: "bebida" },
+  { id: 7, nome: "Gatorade", preco: 10.00, categoria: "bebida" },
+  { id: 8, nome: "Trident", preco: 5.00, categoria: "doce" },
+  { id: 9, nome: "Puxa", preco: 30.00, categoria: "doce" },
+  { id: 10, nome: "Doce de leite", preco: 5.00, categoria: "doce" },
+  { id: 11, nome: "Açai", preco: 10.00, categoria: "doce" },
+  { id: 12, nome: "KikKat", preco: 7.00, categoria: "doce" },
+  { id: 13, nome: "Garoto", preco: 15.00, categoria: "doce" },
+  { id: 14, nome: "Paçoca", preco: 2.00, categoria: "doce" },
+  { id: 15, nome: "Halls", preco: 4.00, categoria: "doce" ,
 
 ];
 
@@ -388,6 +396,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

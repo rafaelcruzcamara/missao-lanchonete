@@ -7,6 +7,7 @@ const produtos = [
   { id: 5, nome: "Água Mineral", preco: 3.00, categoria: "bebida" },
   { id: 6, nome: "Água com gás", preco: 5.00, categoria: "bebida" },
   { id: 7, nome: "Gatorade", preco: 10.00, categoria: "bebida" }
+  { id: 8, nome: "Gatorade", preco: 10.00, categoria: "doce" }
 
 ];
 
@@ -388,6 +389,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

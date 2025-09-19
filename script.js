@@ -38,7 +38,7 @@ function atualizarProdutos() {
   const categorias = {
     salgado: document.getElementById('salgados'),
     bebida: document.getElementById('bebidas'),
-    doces: document.getElementById('doces')
+    doce: document.getElementById('doces')
   };
   Object.values(categorias).forEach(div => div.innerHTML = '');
 
@@ -396,6 +396,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

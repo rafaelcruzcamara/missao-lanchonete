@@ -15,7 +15,10 @@ const produtos = [
   { id: 13, nome: "Garoto", preco: 15.00, categoria: "doce" },
   { id: 14, nome: "Paçoca", preco: 2.00, categoria: "doce" },
   { id: 15, nome: "Halls", preco: 4.00, categoria: "doce" },
-  { id: 16, nome: "Refrigerante Grande", preco: 7.00, categoria: "bebida" }
+  { id: 16, nome: "Refrigerante Grande", preco: 7.00, categoria: "bebida" },
+  { id: 17, nome: "Biscoito", preco: 15.00, categoria: "doce" },
+  { id: 18, nome: "Salgadinho", preco: 5.00, categoria: "doce" },
+  { id: 19, nome: "Amendoim", preco: 5.00, categoria: "doce" }
 
 ];
 
@@ -397,6 +400,7 @@ window.onload = () => {
 // Executa quando a página carrega e após 1 segundo (dupla verificação)
 document.addEventListener('DOMContentLoaded', corrigirInputCliente);
 setTimeout(corrigirInputCliente, 1000);
+
 
 
 

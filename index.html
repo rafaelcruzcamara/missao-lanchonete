@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanchonete Mises - Sistema de Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="text29.png" alt="Lanchonete Mises" class="logo">
+  </header>
+
+   <footer>
+        Desenvolvido por Rafael Cruz Camara • Todos os direitos reservados • 2025
+    </footer>
+
+    <script>
+        // Adicione este efeito de hover dinâmico
+        document.querySelectorAll('.categoria-header').forEach(header => {
+            header.addEventListener('mouseenter', () => {
+                header.style.transform = 'scale(1.02)';
+            });
+            header.addEventListener('mouseleave', () => {
+                header.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+  <main>
+    <!-- Campo do Cliente -->
+    <div class="input-cliente">
+      <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+    </div>
+
+    <!-- Seção de Produtos -->
+    <section>
+      <div class="categoria-header" onclick="toggleCategoria('salgados')">
+        <h2>Salgados</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="salgados"></div>
+
+      <div class="categoria-header" onclick="toggleCategoria('bebidas')">
+        <h2>Bebidas</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="bebidas"></div>
+
+      <div class="categoria-header" onclick="toggleCategoria('doces')">
+        <h2>Doces</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="produtos-lista" id="doces"></div>
+
+      
+        
+      
+    </section>
+
+    <!-- Seção do Pedido Atual -->
+<section>
+  <h2>Pedido Atual</h2>
+  <div class="pedido-lista" id="pedido"></div>
+  <div class="pedido-total" id="pedidoTotal">Total: R$ 0,00</div>
+  
+  
+  <!-- Botão de Gerenciar Produtos -->
+<div class="controles-superiores">
+  <div class="grupo-forma-pagamento">
+    <label for="formaPagamento">Pagamento:</label>
+    <select id="formaPagamento" class="select-estilizado">
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Cartão de Débito">Débito</option>
+      <option value="Cartão de Crédito">Crédito</option>
+      <option value="PIX">PIX</option>
+    </select>
+  </div>
+  <button onclick="abrirGerenciadorProdutos()" class="btn-gerenciar">Gerenciar Produtos</button>
+</div>
+  
+  <div class="controles-pedido">
+    <!-- Botões à esquerda -->
+    <div class="grupo-botoes">
+      <button onclick="imprimirNotaFiscal()" class="primary">Imprimir</button>
+      <button onclick="limparPedido()">Limpar</button>
+    </div>
+    
+    <!-- Campo do cliente à direita -->
+    <div class="campo-cliente">
+      <input type="text" id="nomeCliente" placeholder="Nome do Cliente" class="input-estilizado">
+    </div>
+  </div>
+</section>
+
+    <!-- Seção do Relatório -->
+    <section>
+  <h2>Relatório do Dia</h2>
+  <div class="relatorio-lista" id="relatorio"></div>
+  <div class="pedido-total" id="relatorioTotal">Total do Dia: R$ 0,00</div>
+  <div class="acoes">
+    <button onclick="imprimirRelatorio()">Impr. Relatório Completo</button>
+    <button onclick="imprimirRelatorioResumido()">Impr. Relatório Resumido</button>
+    <button onclick="exportarRelatorioPDF()">Exportar PDF</button>
+    <button onclick="limparRelatorio()">Limpar Relatório</button>
+  </div>
+</section>
+  </main>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+
+  <!-- Modal de Gerenciamento de Produtos -->
+<div id="modalGerenciadorProdutos" class="modal-overlay">
+  <div class="modal-produtos">
+    <div class="modal-header">
+      <h2>Gerenciador de Produtos</h2>
+      <button onclick="fecharGerenciadorProdutos()" class="btn-fechar">×</button>
+    </div>
+    
+    <form id="produtoForm" onsubmit="salvarProduto(event)" class="form-produto">
+      <div class="form-group">
+        <label for="produtoNome">Nome do Produto</label>
+        <input type="text" id="produtoNome" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="produtoPreco">Preço (R$)</label>
+        <input type="number" id="produtoPreco" step="0.01" min="0.01" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="produtoCategoriaSelect">Categoria</label>
+        <select id="produtoCategoriaSelect" onchange="toggleCategoriaInput()">
+          <option value="salgado">Salgado</option>
+          <option value="bebida">Bebida</option>
+          <option value="doce">Doce</option>
+          <option value="outro">Outra categoria</option>
+        </select>
+      </div>
+      
+      <div class="form-group" id="categoriaInputContainer" style="display: none;">
+        <label for="produtoCategoria">Nova Categoria</label>
+        <input type="text" id="produtoCategoria" placeholder="Digite o nome da categoria">
+      </div>
+      
+      <button type="submit" class="btn-adicionar">Adicionar Produto</button>
+    </form>
+    
+    <div class="lista-produtos">
+      <h3>Produtos Cadastrados</h3>
+      <div id="listaProdutos"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Container para alertas -->
+<div id="alertasContainer" class="alertas-container"></div>
+
+<!-- Firebase App (o core do Firebase) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<!-- Firebase Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</body>
+</html>
